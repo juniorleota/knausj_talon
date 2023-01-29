@@ -1,0 +1,7 @@
+take screenshot: key(cmd-shift-4)
+take file screenshot: key(ctrl-cmd-shift-4)
+chrome: user.switcher_focus('Google Chrome')
+coder: user.switcher_focus('IntelliJ IDEA')
+postman: user.switcher_focus('Postman')
+teams: user.switcher_focus('Microsoft Teams')
+window full screen: key(cmd-ctrl-f)

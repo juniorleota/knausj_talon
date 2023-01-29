@@ -195,16 +195,25 @@ class CodeActions:
 class EditActions:
     # talon edit actions
     def copy():
-        actions.user.idea("action EditorCopy")
+        actions.key("cmd-c")
 
     def cut():
-        actions.user.idea("action EditorCut")
+        actions.key("cmd-x")
 
     def delete():
-        actions.user.idea("action EditorBackSpace")
+        actions.key("delete")
+
+    def find_next():
+        actions.user.idea("action FindNext")
+
+    def find_previous():
+        actions.user.idea("action FindPrevious")
+
+    def find(text: str = None):
+        actions.user.idea("action Find")
 
     def paste():
-        actions.user.idea("action EditorPaste")
+        actions.key("cmd-v")
 
     def find_next():
         actions.user.idea("action FindNext")

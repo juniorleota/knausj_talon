@@ -255,5 +255,50 @@ select camel right: user.extend_camel_right()
 go camel left: user.camel_left()
 go camel right: user.camel_right()
 
-# requires plug-in: black-pycharm
-blacken: user.idea("action BLACKReformatCode")
+#custom
+move line down: user.idea("action MoveLineDown")
+move line up: user.idea("action MoveLineUp")
+go replace: user.idea("action Replace")
+build module: user.idea("action MakeModule")
+compile module: user.idea("action Compile")
+go next change: use.idea("action JumpToNextChange")
+copy that: key(cmd-c)
+[pace|paste] that: key(cmd-v)
+compare with branch: key(cmd-shift-w)
+pfs: "private final String"
+pfl: "private final Long"
+system print line: "System.out.println();"
+mcv:
+  insert("mvn clean spotless:apply verify")
+  key(enter)
+gpo:
+  insert("gpo")
+  key(enter)
+gfo:
+  insert("gfo")
+  key(enter)
+nullable: "@Nullable"
+conditional: "if ("
+DTO: "DTO"
+era: "error"
+autowired: "@Autowired"
+spotless apply:
+  insert("mvn spotless:apply")
+  key(enter)
+mcc:
+  insert("mvn clean spotless:apply compile")
+  key(enter)
+go terminal: key(alt-f12)
+quick fix: key(alt-enter)
+find and replace: key(cmd-shift-r)
+new array list: insert("new ArrayList()")
+list: "List<"
+context action: key(alt-enter)
+clap: key(cmd-shift-enter)
+
+# running and debugging
+method run: key(ctrl-shift-r)
+method debug: key(ctrl-shift-d)
+method next: key(ctrl-shift-down)
+method previous: key(ctrl-shift-up)
+method all: key(cmd-f12)

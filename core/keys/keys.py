@@ -147,9 +147,7 @@ punctuation_words = {
     ",": ",",  # <== these things
     "back tick": "`",
     "grave": "`",
-    "comma": ",",
-    # Workaround for issue with conformer b-series; see #946
-    "coma": ",",
+    "spam": ",",
     "period": ".",
     "full stop": ".",
     "semicolon": ";",
@@ -163,6 +161,7 @@ punctuation_words = {
     "number sign": "#",
     "percent sign": "%",
     "at sign": "@",
+    "anno": "@",
     "and sign": "&",
     "ampersand": "&",
     # Currencies
@@ -195,7 +194,6 @@ symbol_key_words = {
     "left paren": "(",
     "R paren": ")",
     "right paren": ")",
-    "brace": "{",
     "left brace": "{",
     "brack": "{",
     "bracket": "{",
@@ -232,9 +230,11 @@ ctx.lists["self.symbol_key"] = symbol_key_words
 ctx.lists["self.number_key"] = dict(zip(default_digits, numbers))
 ctx.lists["self.arrow_key"] = {
     "down": "down",
+    "self": "down",
     "left": "left",
     "right": "right",
     "up": "up",
+    "north": "up",
 }
 
 simple_keys = [
@@ -251,11 +251,14 @@ simple_keys = [
 
 alternate_keys = {
     "wipe": "backspace",
-    "delete": "backspace",
-    #'junk': 'backspace',
-    "forward delete": "delete",
+    #"forward wipe": "delete",
+    "junk": "delete",
     "page up": "pageup",
     "page down": "pagedown",
+    "scrape": "escape",
+    "super": "command",
+    "commander": "command",
+    "next": "tab",
 }
 # mac apparently doesn't have the menu key.
 if app.platform in ("windows", "linux"):
