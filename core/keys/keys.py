@@ -230,7 +230,6 @@ ctx.lists["self.symbol_key"] = symbol_key_words
 ctx.lists["self.number_key"] = dict(zip(default_digits, numbers))
 ctx.lists["self.arrow_key"] = {
     "down": "down",
-    "self": "down",
     "left": "left",
     "right": "right",
     "up": "up",
@@ -251,7 +250,6 @@ simple_keys = [
 
 alternate_keys = {
     "wipe": "backspace",
-    #"forward wipe": "delete",
     "junk": "delete",
     "page up": "pageup",
     "page down": "pagedown",
