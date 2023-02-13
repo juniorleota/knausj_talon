@@ -128,7 +128,7 @@ git push: user.idea("action CheckinProject")
 git log: user.idea("action Vcs.ShowTabbedFileHistory")
 git branches: 
     user.idea("action Vcs.QuickListPopupAction")
-    sleep(400ms)
+    sleep(150ms)
     key("7")
 git (annotate | blame): user.idea("action Annotate")
 git menu: user.idea("action Vcs.QuickListPopupAction")
@@ -149,6 +149,7 @@ toggle to do: user.idea("action ActivateTODOToolWindow")
 toggle docker: user.idea("action ActivateDockerToolWindow")
 toggle favorites: user.idea("action ActivateFavoritesToolWindow")
 toggle last: user.idea("action JumpToLastWindow")
+toggle hierarchy: user.idea("action ActivateHierarchyToolWindow")
 # Pin/dock/float
 toggle pinned: user.idea("action TogglePinnedMode")
 toggle docked: user.idea("action ToggleDockMode")
@@ -264,8 +265,6 @@ go next change: use.idea("action JumpToNextChange")
 copy that: key(cmd-c)
 [pace|paste] that: key(cmd-v)
 compare with branch: key(cmd-shift-w)
-pfs: "private final String"
-pfl: "private final Long"
 system print line: "System.out.println();"
 mcv:
   insert("mvn clean spotless:apply verify")
@@ -273,14 +272,7 @@ mcv:
 gpo:
   insert("gpo")
   key(enter)
-gfo:
-  insert("gfo")
-  key(enter)
-nullable: "@Nullable"
 conditional: "if ("
-DTO: "DTO"
-era: "error"
-autowired: "@Autowired"
 spotless apply:
   insert("mvn spotless:apply")
   key(enter)
@@ -288,8 +280,11 @@ mcc:
   insert("mvn clean spotless:apply compile")
   key(enter)
 go terminal: key(alt-f12)
-go project: user.idea("action FileChooser.LightEditGotoOpenedFile")
-go call hierarchy: key(ctrl-alt-h)
+go project: 
+    key(cmd-1)
+    sleep(300ms)
+    key(1)
+go hierarchy: key(ctrl-alt-h)
 quick fix: key(alt-enter)
 find and replace: key(cmd-shift-r)
 new array list: insert("new ArrayList()")
@@ -303,3 +298,46 @@ method debug: key(ctrl-shift-d)
 method next: key(ctrl-shift-down)
 method previous: key(ctrl-shift-up)
 method all: key(cmd-f12)
+method signature: key(cmd-f6) 
+method rename: key(shift-f6)
+
+
+# operators
+op and: insert(" && ")
+op equals: insert(" == ")
+op not null: insert("!= null")
+op null: insert("== null")
+op conditional:
+    insert("if () {}")
+    sleep(300ms)
+    key(left)
+    key(left)
+    key(left)
+    key(left)
+op return: insert("return ")
+op op equals: 
+    insert(".equals()")
+    sleep(300ms)
+    key(left)
+op is empty string:
+    insert("StringUtils.isEmpty\(\)")
+    sleep(300ms)
+    key(left)
+op is empty list:
+    insert("CollectionUtils.isEmpty\(\)")
+    sleep(300ms)
+    key(left)
+op empty list:
+    insert("Collections.emptyList()")
+op nullable: "@Nullable"
+op autowired: "@Autowired"
+op service: "@Service"
+op required args: "@RequiredArgsConstructor"
+op data: "@Data"
+op pf: "private final "
+op list:
+    insert("List<>")
+    sleep(300ms)
+    key(left)
+op pfs: "private final String"
+op pfl: "private final Long"

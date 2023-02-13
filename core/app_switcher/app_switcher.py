@@ -256,6 +256,7 @@ class Actions:
 
     def switcher_focus(name: str):
         """Focus a new application by name"""
+        #print(name)
         app = actions.user.get_running_app(name)
         actions.user.switcher_focus_app(app)
 
