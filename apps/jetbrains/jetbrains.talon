@@ -341,3 +341,5 @@ op list:
     key(left)
 op pfs: "private final String"
 op pfl: "private final Long"
+op const: "public static final "
+op const string: "public static final String "

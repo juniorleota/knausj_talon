@@ -17,6 +17,7 @@ panel errors: key(ctrl-\ ctrl-e)
 panel design: key(shift-f7)
 panel marks: key(ctrl-k ctrl-w)
 panel breakpoints: key(ctrl-alt-b)
+panel terminal: key(ctrl-shift-`)
 
 # Settings
 show settings: key(alt-t o)
