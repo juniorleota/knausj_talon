@@ -356,14 +356,23 @@ op list:
     insert("List<>")
     sleep(300ms)
     key(left)
-op pfs: "private final String"
-op pfl: "private final Long"
-op const: "public static final "
-op const string: "public static final String "
 op assign: " = "
 
+# variable declaration
+variable string: "private final String "
+variable long: "private final Long "
+variable constant: "public static final "
+variable constant string: "public static final String "
+
 # plant uml
-reference star: "*->"
-reference equal: "=>"
-reference dash: "-->"
-reference arrow: "->"
+reference star: "*-> "
+reference equal: "=> "
+reference dash: "--> "
+reference arrow: "-> "
+
+# vim clipboard
+paste clipboard:
+    key(ctrl+r)
+    sleep(250ms)
+    key(*)
+
