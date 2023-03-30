@@ -126,7 +126,7 @@ git pull: user.idea("action Vcs.UpdateProject")
 git commit: user.idea("action CheckinProject")
 git push: user.idea("action CheckinProject")
 git log: user.idea("action Vcs.ShowTabbedFileHistory")
-git branches: 
+git branches:
     user.idea("action Vcs.QuickListPopupAction")
     sleep(150ms)
     key("7")
@@ -150,6 +150,7 @@ toggle docker: user.idea("action ActivateDockerToolWindow")
 toggle favorites: user.idea("action ActivateFavoritesToolWindow")
 toggle last: user.idea("action JumpToLastWindow")
 toggle hierarchy: user.idea("action ActivateHierarchyToolWindow")
+toggle changes: key("cmd-0")
 # Pin/dock/float
 toggle pinned: user.idea("action TogglePinnedMode")
 toggle docked: user.idea("action ToggleDockMode")
@@ -280,7 +281,7 @@ mcc:
   insert("mvn clean spotless:apply compile")
   key(enter)
 go terminal: key(alt-f12)
-go project: 
+go project:
     key(cmd-1)
     sleep(300ms)
     key(1)
@@ -298,9 +299,19 @@ method debug: key(ctrl-shift-d)
 method next: key(ctrl-shift-down)
 method previous: key(ctrl-shift-up)
 method all: key(cmd-f12)
-method signature: key(cmd-f6) 
+method signature: key(cmd-f6)
 method rename: key(shift-f6)
 
+# annotations
+anno autowired: "@Autowired"
+anno nullable: "@Nullable"
+anno service: "@Service"
+anno required args: "@RequiredArgsConstructor"
+anno data: "@Data"
+
+# Primary operators
+return: "return "
+class: "class "
 
 # operators
 op and: insert(" && ")
@@ -315,7 +326,19 @@ op conditional:
     key(left)
     key(left)
 op return: insert("return ")
-op op equals: 
+op for loop:
+    insert("for () {}")
+    key(left)
+    key(left)
+    key(left)
+    key(left)
+op while loop:
+    insert("while () {}")
+    key(left)
+    key(left)
+    key(left)
+    key(left)
+op equals:
     insert(".equals()")
     sleep(300ms)
     key(left)
@@ -329,12 +352,6 @@ op is empty list:
     key(left)
 op empty list:
     insert("Collections.emptyList()")
-op nullable: "@Nullable"
-op autowired: "@Autowired"
-op service: "@Service"
-op required args: "@RequiredArgsConstructor"
-op data: "@Data"
-op pf: "private final "
 op list:
     insert("List<>")
     sleep(300ms)
@@ -343,3 +360,10 @@ op pfs: "private final String"
 op pfl: "private final Long"
 op const: "public static final "
 op const string: "public static final String "
+op assign: " = "
+
+# plant uml
+reference star: "*->"
+reference equal: "=>"
+reference dash: "-->"
+reference arrow: "->"
