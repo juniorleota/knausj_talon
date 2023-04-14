@@ -367,7 +367,7 @@ variable constant string: "public static final String "
 # plant uml
 reference star: "*-> "
 reference equal: "=> "
-reference dash: "--> "
+reference return: "--> "
 reference arrow: "-> "
 
 # vim clipboard
@@ -376,3 +376,7 @@ paste clipboard:
     sleep(250ms)
     key(*)
 
+paste register:
+    key(ctrl+r)
+    sleep(250ms)
+    key(man my life these past few days have just been wake up, think about multiple shop and change detection")
